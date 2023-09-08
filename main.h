@@ -6,5 +6,5 @@
 #include <unistd.h>
 #include <string.h>
 #include <sys/wait.h>
-
+int check_space(char *array);
 #endif
