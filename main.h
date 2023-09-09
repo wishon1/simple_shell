@@ -7,4 +7,5 @@
 #include <string.h>
 #include <sys/wait.h>
 int check_space(char *array);
+void environment(char **env);
 #endif

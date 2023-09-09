@@ -4,16 +4,14 @@
  *
  */
 
-int main (int argc, char **argv, char **env)
+int main(int argc, char **argv, char **env)
 {
-	(void) argc;
-	(void) argv;
-	(void) env;
-
 	int get_byte, pid, i;
 	size_t num_byte = 0;
 	char *array = NULL;
 	char *arg[10];
+	(void) argc;
+	(void) argv;
 
 	while(1)
 	{
@@ -29,6 +27,11 @@ int main (int argc, char **argv, char **env)
 		if (check_space(array))
 			continue;
 		arg[0] = strtok(array, " \n");
+		if (strcmp(arg[0], "env") == 0)
+		{
+			environment(env);
+			continue;
+		}
 		i = 0;
 		while(arg[i] != NULL)
 		{

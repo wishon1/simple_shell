@@ -6,7 +6,7 @@
  */
 int check_space(char *array)
 {
-	int i;
+	unsigned int i;
 
 	for (i = 0; i < strlen(array) - 1; i++)
 	{
