@@ -26,11 +26,8 @@ int main(int argc, char **argv, char **env)
 		if (get_byte == -1)
 		{
 			write(1, "\n", 2);
-<<<<<<< HEAD
 			exit(1);
-=======
 			exit_1(1, array);
->>>>>>> 38fae7033e049165b390511bcf7e3c48d37130a4
 		}
 		if (check_space(array))
 			continue;
