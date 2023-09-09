@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **env)
 		{	
 			free(array);
 			write(1, "\n", 2);
-			exit(0);
+			exit(1);
 		}
 		if (check_space(array))
 			continue;
