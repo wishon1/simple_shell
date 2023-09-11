@@ -32,7 +32,6 @@ int main(int argc, char **argv, char **env)
 		if (check_space(array))
 			continue;
 		arg[0] = strtok(array, " \n");
-
 		if (strcmp(arg[0], "exit") == 0)
 		{
 			exit_1(0, array);
@@ -42,7 +41,7 @@ int main(int argc, char **argv, char **env)
 			environment(env);
 			continue;
 		}
-
+		arg[0] = co(arg[0]);
 		i = 0;
 		while (arg[i] != NULL)
 		{

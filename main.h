@@ -10,4 +10,5 @@
 void exit_1(int value, char *pointer);
 int check_space(char *array);
 void environment(char **env);
+char *co(char *arr);
 #endif
