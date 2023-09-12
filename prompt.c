@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * main - main function of the shell program
  * @argc: number of arguements
@@ -25,20 +24,21 @@ int main(int argc, char **argv, char **env)
 			continue;
 		arg[0] = strtok(array, " \n");
 		if (strcmp(arg[0], "exit") == 0)
+		{
 			exit_1(0, array);
+		}
 		if (strcmp(arg[0], "env") == 0)
 		{
 			environment(env);
 			continue;
 		}
-		/*arg[0] = co(arg[0]);*/
 		i = 0;
 		while (arg[i] != NULL)
 		{
 			i++;
 			arg[i] = strtok(NULL, " \n");
 		}
-		if (access(arg[0], F_OK)  == 0)
+		if (_exe_path(&arg[0]) == 1)
 		{
 			pid = fork();
 			if (pid == 0)
