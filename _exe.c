@@ -1,4 +1,5 @@
 #include "main.h"
+int _exe_path(char **str);
 /**
  * _exe_path - check if the command exist in the
  * path, if it does not creat a path and append it to the directory
@@ -9,7 +10,8 @@
 int _exe_path(char **str)
 {
 	char *_path, *_split, *buffer;
-	static char path_buf[1024];
+	static char path_buf[1024], array[1000];
+	unsigned int i = 0;
 
 	if (access(*str, X_OK) == 0)
 		return (1);
@@ -20,7 +22,6 @@ int _exe_path(char **str)
 	_split = strtok(path_buf, ":");
 	while (_split != NULL)
 	{
-
 		buffer = malloc(strlen(_split) + strlen("/") + strlen(*str) + 1);
 		if (buffer == NULL)
 		{
@@ -33,8 +34,14 @@ int _exe_path(char **str)
 		strcat(buffer, *str);
 		if (access(buffer, X_OK) == 0)
 		{
-			*str = buffer;
+			while (i < strlen(buffer))
+			{
+				array[i] = buffer[i];
+				i++;
+			}
+			array[i] = '\0';
 			free(buffer);
+			*str = array;
 			return (1);
 		}
 		free(buffer);
