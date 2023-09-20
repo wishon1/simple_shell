@@ -6,6 +6,6 @@
  */
 void getLine_check(char *ptr)
 {
-	write(1, "\n", 2);
-	exit_1(1, ptr);
+	write(0, "\n", 2);
+	exit_1(0, ptr);
 }
