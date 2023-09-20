@@ -23,11 +23,11 @@ int _exe_path(char **str)
 	while (_split != NULL)
 	{
 		buffer = malloc(strlen(_split) + strlen("/") + strlen(*str) + 1);
-		if (buffer == NULL)
+		if (buffer == -1)
 		{
 			perror(*str);
 			free(buffer);
-			return (0);
+			exit(1);
 		}
 		strcpy(buffer, _split);
 		strcat(buffer, "/");
