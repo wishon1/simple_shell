@@ -38,7 +38,7 @@ int main(int argc, char **argv, char **env)
 			i++;
 			arg[i] = strtok(NULL, " \n");
 		}
-		if (_exe_path(&arg[0]) == 1)
+		if (access(arg[0], X_OK) == 0)
 		{
 			pid = fork();
 			if (pid == 0)
