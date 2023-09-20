@@ -27,7 +27,7 @@ int _exe_path(char **str)
 		{
 			perror(*str);
 			free(buffer);
-			exit(1);
+			return (0);
 		}
 		strcpy(buffer, _split);
 		strcat(buffer, "/");
