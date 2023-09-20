@@ -23,7 +23,7 @@ int _exe_path(char **str)
 	while (_split != NULL)
 	{
 		buffer = malloc(strlen(_split) + strlen("/") + strlen(*str) + 1);
-		if (buffer == -1)
+		if (buffer == NULL)
 		{
 			perror(*str);
 			free(buffer);
