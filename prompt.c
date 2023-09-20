@@ -48,8 +48,6 @@ int main(int argc, char **argv, char **env)
 				wait(NULL);
 			}
 		}
-		else
-			exit(1);
 	}
-	return (0);
+	return (1);
 }
