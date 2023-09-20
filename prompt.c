@@ -25,7 +25,7 @@ int main(int argc, char **argv, char **env)
 		arg[0] = strtok(array, " \n");
 		if (strcmp(arg[0], "exit") == 0)
 		{
-			exit_1(0, array);
+			exit_1(1, array);
 		}
 		if (strcmp(arg[0], "env") == 0)
 		{
@@ -49,5 +49,5 @@ int main(int argc, char **argv, char **env)
 			}
 		}
 	}
-	return (1);
+	return (0);
 }
