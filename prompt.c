@@ -45,11 +45,11 @@ int main(int argc, char **argv, char **env)
 				execve(arg[0], arg, NULL);
 			else
 			{
-				pid = wait(NULL);
-				if (pid == -1)
-					exit(1);
+				wait(NULL);
 			}
 		}
+		else
+			exit(1);
 	}
 	return (0);
 }
