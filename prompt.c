@@ -44,7 +44,11 @@ int main(int argc, char **argv, char **env)
 			if (pid == 0)
 				execve(arg[0], arg, NULL);
 			else
-				wait(NULL);
+			{
+				pid = wait(NULL);
+				if (pid == -1)
+					exit(1);
+			}
 		}
 	}
 	return (0);
